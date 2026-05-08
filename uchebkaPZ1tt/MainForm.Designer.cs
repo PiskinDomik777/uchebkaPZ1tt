@@ -45,7 +45,7 @@
             dgvRequests.RowHeadersWidth = 51;
             dgvRequests.RowTemplate.Height = 24;
             dgvRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequests.Size = new Size(1160, 588);
+            dgvRequests.Size = new Size(1149, 306);
             dgvRequests.TabIndex = 0;
             dgvRequests.CellContentClick += dgvRequests_CellContentClick;
             // 
@@ -76,10 +76,10 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(997, 23);
+            btnAdd.Location = new Point(912, 393);
             btnAdd.Margin = new Padding(3, 4, 3, 4);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(175, 36);
+            btnAdd.Size = new Size(235, 60);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = true;
@@ -87,10 +87,10 @@
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(816, 23);
+            btnRefresh.Location = new Point(607, 393);
             btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(160, 36);
+            btnRefresh.Size = new Size(279, 60);
             btnRefresh.TabIndex = 4;
             btnRefresh.Text = "Обновить";
             btnRefresh.UseVisualStyleBackColor = true;
