@@ -3,7 +3,6 @@
     partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.DataGridView dgvRequests;
         private System.Windows.Forms.ComboBox cmbSort;
         private System.Windows.Forms.CheckBox chkAsc;
         private System.Windows.Forms.Button btnAdd;
@@ -25,29 +24,15 @@
 
         private void InitializeComponent()
         {
-            dgvRequests = new DataGridView();
             cmbSort = new ComboBox();
             chkAsc = new CheckBox();
             btnAdd = new Button();
             btnRefresh = new Button();
             label1 = new Label();
             label2 = new Label();
+            dgvRequests = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvRequests).BeginInit();
             SuspendLayout();
-            // 
-            // dgvRequests
-            // 
-            dgvRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRequests.Location = new Point(11, 79);
-            dgvRequests.Margin = new Padding(3, 4, 3, 4);
-            dgvRequests.Name = "dgvRequests";
-            dgvRequests.ReadOnly = true;
-            dgvRequests.RowHeadersWidth = 51;
-            dgvRequests.RowTemplate.Height = 24;
-            dgvRequests.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequests.Size = new Size(1149, 306);
-            dgvRequests.TabIndex = 0;
-            dgvRequests.CellContentClick += dgvRequests_CellContentClick;
             // 
             // cmbSort
             // 
@@ -73,6 +58,7 @@
             chkAsc.TabIndex = 2;
             chkAsc.Text = "По возрастанию";
             chkAsc.UseVisualStyleBackColor = true;
+            chkAsc.CheckedChanged += chkAsc_CheckedChanged;
             // 
             // btnAdd
             // 
@@ -115,25 +101,37 @@
             label2.TabIndex = 6;
             label2.Text = "Учет заявок на ремонт компьютерной техники";
             // 
+            // dgvRequests
+            // 
+            dgvRequests.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRequests.Location = new Point(12, 77);
+            dgvRequests.Name = "dgvRequests";
+            dgvRequests.RowHeadersWidth = 51;
+            dgvRequests.Size = new Size(1160, 309);
+            dgvRequests.TabIndex = 7;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 737);
+            Controls.Add(dgvRequests);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnRefresh);
             Controls.Add(btnAdd);
             Controls.Add(chkAsc);
             Controls.Add(cmbSort);
-            Controls.Add(dgvRequests);
             Margin = new Padding(3, 4, 3, 4);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Список заявок";
+            Load += MainForm_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvRequests).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private DataGridView dgvRequests;
     }
 }

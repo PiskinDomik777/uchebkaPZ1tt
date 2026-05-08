@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RepairRequestsApp
+﻿namespace RepairRequestsApp
 {
     public static class DataStore
     {

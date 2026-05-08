@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-using uchebkaPZ1tt.Models;
+﻿using uchebkaPZ1tt.Models;
 
 namespace uchebkaPZ1tt
 {
@@ -30,8 +28,7 @@ namespace uchebkaPZ1tt
                     var request = new InputDataRequest
                     {
                         RequestId = nextId,
-                        StartDate = DateTime.Now.ToString("yyyy-MM-dd"),
-
+                        StartDate = DateTime.Now,
                         ComputerTechType = txtType.Text,
                         ComputerTechModel = txtModel.Text,
                         ProblemDescryption = txtProblem.Text,

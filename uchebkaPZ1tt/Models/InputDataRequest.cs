@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace uchebkaPZ1tt.Models;
+﻿namespace uchebkaPZ1tt.Models;
 
 public partial class InputDataRequest
 {
     public int RequestId { get; set; }
 
-    public string StartDate { get; set; } = null!;
+    public DateTime StartDate { get; set; }
 
-    public string? ComputerTechType { get; set; }
+    public string ComputerTechType { get; set; } = null!;
 
-    public string? ComputerTechModel { get; set; }
+    public string ComputerTechModel { get; set; } = null!;
 
-    public string? ProblemDescryption { get; set; }
+    public string ProblemDescryption { get; set; } = null!;
 
-    public string? RequestStatus { get; set; }
+    public string RequestStatus { get; set; } = null!;
 
-    public string? CompletionDate { get; set; }
+    public DateTime? CompletionDate { get; set; }
 
     public string? RepairParts { get; set; }
 

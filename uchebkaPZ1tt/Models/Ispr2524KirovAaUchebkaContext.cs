@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace uchebkaPZ1tt.Models;
 
@@ -23,8 +20,7 @@ public partial class Ispr2524LinkovNIUchebkaContext : DbContext
     public virtual DbSet<InputDataUser> InputDataUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=cfif31.ru;database=ISPr25-24_LinkovNI_Uchebka;user=ISPr25-24_LinkovNI;password=ISPr25-24_LinkovNI;CharSet=utf8;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.45-mysql"));
+        => optionsBuilder.UseMySql("server=cfif31.ru;database=ISPr25-24_LinkovNI_Uchebka2.0;user=ISPr25-24_LinkovNI;password=ISPr25-24_LinkovNI;CharSet=utf8;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.45-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -72,9 +68,12 @@ public partial class Ispr2524LinkovNIUchebkaContext : DbContext
                 .ValueGeneratedNever()
                 .HasColumnName("requestID");
             entity.Property(e => e.ClientId).HasColumnName("clientID");
+
+            // ИСПРАВЛЕНО: CompletionDate - теперь DATETIME
             entity.Property(e => e.CompletionDate)
-                .HasColumnType("text")
+                .HasColumnType("datetime")
                 .HasColumnName("completionDate");
+
             entity.Property(e => e.ComputerTechModel)
                 .HasColumnType("text")
                 .HasColumnName("computerTechModel");
@@ -91,8 +90,10 @@ public partial class Ispr2524LinkovNIUchebkaContext : DbContext
             entity.Property(e => e.RequestStatus)
                 .HasColumnType("text")
                 .HasColumnName("requestStatus");
+
+            // ИСПРАВЛЕНО: StartDate - теперь DATETIME
             entity.Property(e => e.StartDate)
-                .HasColumnType("text")
+                .HasColumnType("datetime")
                 .HasColumnName("startDate");
 
             entity.HasOne(d => d.Client).WithMany(p => p.InputDataRequestClients)

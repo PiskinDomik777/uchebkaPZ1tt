@@ -1,6 +1,3 @@
-using System;
-using System.Windows.Forms;
-
 namespace uchebkaPZ1tt
 {
     internal static class Program

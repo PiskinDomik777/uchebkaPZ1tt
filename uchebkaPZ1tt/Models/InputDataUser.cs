@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace uchebkaPZ1tt.Models;
+﻿namespace uchebkaPZ1tt.Models;
 
 public partial class InputDataUser
 {
