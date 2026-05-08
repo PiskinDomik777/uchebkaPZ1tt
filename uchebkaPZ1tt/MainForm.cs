@@ -55,20 +55,23 @@ namespace uchebkaPZ1tt
 
         private void cmbSort_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbSort.SelectedItem == null)
+                return;
+
             using (var context = new Ispr2524LinkovNIUchebkaContext())
             {
                 var query = context.InputDataRequests.AsQueryable();
+                string sort = cmbSort.SelectedItem.ToString();
 
-                // Проверяем, какой вариант выбрал пользователь
-                if (cmbSort.SelectedItem.ToString() == "Сначала новые")
+                if (sort == "Сначала новые")
                 {
                     query = query.OrderByDescending(x => x.StartDate);
                 }
-                else if (cmbSort.SelectedItem.ToString() == "Сначала старые")
+                else if (sort == "Сначала старые")
                 {
                     query = query.OrderBy(x => x.StartDate);
                 }
-                else if (cmbSort.SelectedItem.ToString() == "По номеру (возр.)")
+                else if (sort == "По номеру (возр.)")
                 {
                     query = query.OrderBy(x => x.RequestId);
                 }
